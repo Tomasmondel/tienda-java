@@ -21,7 +21,7 @@ function Registrate(){
 let nombre= prompt("ingrese su nombre");
 let apellido= prompt("ingrese su apellido");
 let dni= parseInt(prompt("ingrese su dni"));
-let cliente = new cliente(nombre , apellido, dni)
+let cliente = new cliente(nombre , apellido, dni);
 arrayClientes.push(cliente);
 console.log(arrayClientes);
 }
@@ -66,7 +66,24 @@ Precio: $${stock.Precio}`;
 alert(mensaje);
 ;
 });
-alert("¿quiere filtrar los productos en un rango de precios?")
+function filtrar(){
+    let filtro= parseFloat(prompt("introduce el precio que desea establecer como filtro"))
+    alert(productos.some(item=> item.Precio === `${filtro}`))
+}
+function menu2(){
+    alert("¿desea filtrar los productos en un rango de precios que usted desee?");
+    let opcion2 = prompt("si o no");
+    return opcion2;
+}
+let opcion2 = menu2()
+switch(opcion2){
+    case 1:
+        filtrar();
+        break;
+    case 2: 
+        noFiltrar();
+        break;
+}
 }
 //salir
 function salir(){
@@ -82,10 +99,10 @@ let opcion = menu();
 switch(opcion){
     case 1:
         Registrate();
-        breack;
+        break;
     case 2:
         consultaExistencia();
-        breack;
+        break;
     case 3:
         stock();
         break;
