@@ -16,6 +16,12 @@ const arrayClientes = []
 arrayClientes.push(clientetomas)
 arrayClientes.push(clientevanina) 
 
+function menu(){
+    alert('Binvenido a mondello store');
+    let opcion = parseInt(prompt('que opcion desea elegir: \n 1) Registrate como usuario  \n 2) comprobar registro \n 3) Mira nuestros productos en stock  \n 4) salir'));
+    return opcion;
+} 
+
 
 function Registrate(){
 let nombre= prompt("ingrese su nombre");
@@ -43,8 +49,8 @@ const productos =[
 {id:5 , nombre: "Smart TV 4K 65", Precio: 56168},
 {id: 6, nombre: "Smart TV LED 50 4K UHD RCA", Precio: 32656},
 {id: 7 , nombre: "Celular Motorola G42 128GB Rosa Metálico", Precio:21544},
-{id:8 , nombre: "Celular Samsung Galaxy A53 5G 128GB Negro", Precio: 25474},
-{id:9 , nombre: "Xiaomi Redmi Note 11 128GB Negro", Precio: 12543},
+{id: 8 , nombre: "Celular Samsung Galaxy A53 5G 128GB Negro", Precio: 25474},
+{id: 9 , nombre: "Xiaomi Redmi Note 11 128GB Negro", Precio: 12543},
 {id: 10, nombre: "Celular Samsung Galaxy A04e 32GB Black", Precio: 35654},
 {id: 11 , nombre: "Notebook Exo R33 14", Precio:65651},
 {id:12, nombre: "Notebook Tecnobrand", Precio: 45654},
@@ -58,43 +64,12 @@ const arrayProductos= []
 arrayProductos.push(productos)
 
 function stock(){
-encontrados.forEach((stock) => {
-let mensaje = 
-`ID: ${stock.id}
-Nombre: ${stock.nombre}
-Precio: $${stock.Precio}`;
-alert(mensaje);
-;
-});
-function filtrar(){
-    let filtro= parseFloat(prompt("introduce el precio que desea establecer como filtro"))
-    alert(productos.some(item=> item.Precio === `${filtro}`))
-}
-function menu2(){
-    alert("¿desea filtrar los productos en un rango de precios que usted desee?");
-    let opcion2 = prompt("si o no");
-    return opcion2;
-}
-let opcion2 = menu2()
-switch(opcion2){
-    case 1:
-        filtrar();
-        break;
-    case 2: 
-        noFiltrar();
-        break;
-}
-}
-//salir
-function salir(){
-    alert("gracias por contar con Mondello Store, esperamos que vuelva pronto.")
-}
+productos.forEach((item) => {
+return console.log(item);
+})
+};
 
-function menu(){
-    alert("Binvenido a mondello store");
-    let opcion = parseInt(prompt('que opcion desea elegir: \n 1) Registrate como usuario  \n 2) comprobar registro \n 3) Mira nuestros productos en stock  \n 4) salir'));
-    return opcion;
-} 
+
 let opcion = menu();
 switch(opcion){
     case 1:
@@ -114,3 +89,10 @@ switch(opcion){
         break;
     
 }
+//salir
+function salir(){
+    alert("gracias por contar con Mondello Store, esperamos que vuelva pronto.")
+}
+
+
+
