@@ -16,10 +16,10 @@ return(
     <div className="catalogo__contenedor">
         <h2>lista de productos</h2>
         <hr />
-        <div classname= 'row'>
+        <div className= 'row'>
             {
                 Productos.map((prod)=>(
-                    <div key={prod.id} classname='contenedor__productos'>
+                    <div key={prod.id} className='col-3 m-2'>
                     <h4>{prod.nombre}</h4>
                     <img className="imagen" src={prod.img} alt={prod.nombre}/>
                     <p>{prod.descripcion}</p>
